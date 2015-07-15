@@ -129,6 +129,9 @@ module.exports = function(grunt) {
 			},
 			html: {
 				files: [ 'index.html']
+			},
+			md: {
+				files: [ 'index.html']
 			}
 		}
 
