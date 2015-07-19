@@ -1,0 +1,10 @@
+{
+  "folders":
+  [
+      {
+      "path": ".",
+      "folder_exclude_patterns": ["node_modules", "builds", "log", "csss", "js", "lib", "plugin", "test"],
+      "file_exclude_patterns": ["*.pdf", "*.jpg", "*.png", "*.sublime-workspace"]
+      }
+  ]
+}
