@@ -1,0 +1,73 @@
+/**
+ * A simple theme for reveal.js presentations, similar
+ * to the default theme. The accent color is darkblue.
+ *
+ * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+// @import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
+// @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+
+// Override theme settings (see ../template/settings.scss)
+$mainFont: 'Roboto', sans-serif;
+$mainColor: #222D38;
+$headingFont: 'Roboto', Impact, sans-serif;
+$headingColor: #0078FF;
+$headingFontWeight: 700;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$backgroundColor: #fff;
+$linkColor: #2ED8B1;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: rgba(0, 0, 0, 0.99);
+
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+h1{
+  letter-spacing: -3px !important;
+}
+
+h2{
+  letter-spacing: -2px !important;
+}
+
+h3{
+  letter-spacing: -1px;
+  // color: #456283 !important;
+}
+
+li{
+  list-style-type: none;
+  position: relative;
+  &::before{
+    content: " ";
+    width: 10px;
+    height: 10px;
+    border: 3px solid #BBB;
+    position: absolute;
+    border-radius: 50%;
+    top: 15px;
+    left: -30px;
+  }
+}
+
+hr{
+  border: 0;
+  border-bottom: 1px solid #DDD;
+}
