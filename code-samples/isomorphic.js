@@ -16,13 +16,13 @@ module.exports = ({ documentId, containerId }) => {
 
       const page = containerStore.getPage();
       const containerComponent = React.createFactory(ContainerComponent)({
-        containerStore: containerStore
+        container: containerStore
       });
 
       return {
         width: page.properties.w,
         height: page.properties.h,
-        html: React.renderToString(containerComponent)
+        html: React.renderToStaticMarkup(containerComponent)
       };
     });
 
