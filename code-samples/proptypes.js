@@ -23,12 +23,12 @@ export default React.createClass({
   },
 
   render() {
-    let classes = classSet({
+    const classes = classSet({
       'c-page_lock_indicator': true,
       'c-page_lock_indicator--is_minimal': this.props.minimal
     });
 
-    let title = this.props.member.name + ' (' + this.props.member.email + ')';
+    const title = this.props.member.name + ' (' + this.props.member.email + ')';
 
     let text;
     if (!this.props.minimal) {

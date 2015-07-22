@@ -1,7 +1,8 @@
 import React, {PropTypes} from 'react';
 import connectToStores from './connect-to-stores';
+import UserStore from './user-store';
 
-var ProfilePage = React.createClass({
+const ProfilePage = React.createClass({
 
   propTypes: {
     userId: PropTypes.number.isRequired,
@@ -14,7 +15,11 @@ var ProfilePage = React.createClass({
   }
 });
 
+const getUserFromStoreFn = props =>
+  return {
+    user: UserStore.get(props.userId)
+  };
+}
+
 // Now wrap ProfilePage using a higher-order component:
-ProfilePage = connectToStores(ProfilePage, [UserStore], props => ({
-  user: UserStore.get(props.userId)
-});
+ProfilePage = connectToStores(ProfilePage, [UserStore], getUserFromStoreFn);

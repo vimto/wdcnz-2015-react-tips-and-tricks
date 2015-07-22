@@ -12,11 +12,12 @@ HSVColorFieldComponent = React.createClass
 
     @hsv = new ColorSpaceCanvas(hsvProps, @getDOMNode())
 
-  shouldComponentUpdate: (nextProps) ->
+  shouldComponentUpdate: (nextProps, nextState) ->
     if nextProps.width != @props.width or nextProps.height != @props.height
       return true
 
-    # Hue bar never needs to update if hsva changes , this may hnage later if we let people swap color axes in the UI
+    # Hue bar never needs to update if hsva changes
+    # This may change later if we let people swap color axes in the UI
     if @props.axes == 'h'
       return false
 
