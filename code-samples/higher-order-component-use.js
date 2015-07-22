@@ -15,7 +15,7 @@ const ProfilePage = React.createClass({
   }
 });
 
-const getUserFromStoreFn = props =>
+const getUserFromStoreFn = (props) => {
   return {
     user: UserStore.get(props.userId)
   };

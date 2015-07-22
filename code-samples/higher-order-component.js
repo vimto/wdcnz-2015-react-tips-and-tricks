@@ -7,15 +7,15 @@ export default function connectToStores(Component, ...stores, getStateFromStores
     },
 
     componentDidMount() {
-      stores.forEach(store =>
+      stores.forEach((store) => {
         store.addChangeListener(this.handleStoresChanged)
-      );
+      });
     },
 
     componentWillUnmount() {
-      stores.forEach(store =>
+      stores.forEach((store) => {
         store.removeChangeListener(this.handleStoresChanged)
-      );
+      });
     },
 
     handleStoresChanged() {

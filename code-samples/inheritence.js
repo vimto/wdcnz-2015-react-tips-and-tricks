@@ -1,29 +1,22 @@
 import React from 'react';
-import { Node } from '../models';
-import ContainerStore from '../../client/scripts/stores/container';
-import ContainerComponent from './container-component-wrapper.coffee';
 
-module.exports = ({ documentId, containerId }) => {
+class Hello extends React.Component {
+  greeting() {
+    return "Hello";
+  },
+  render() {
+    return (
+      <h1>
+        { this.greeting() } { this.props.name }
+      </h1>
+    );
+  }
+}
 
-    return Node.getActiveByDocumentAndContainer(documentId, containerId)
-    .then((nodes) => {
+class Bonjour extends Hello {
+  greeting() {
+    return "Bonjour";
+  },
+}
 
-      const containerStore = new ContainerStore({
-        id: containerId,
-        nodes,
-        createdAt: new Date()
-      });
-
-      const page = containerStore.getPage();
-      const containerComponent = React.createFactory(ContainerComponent)({
-        containerStore: containerStore
-      });
-
-      return {
-        width: page.properties.w,
-        height: page.properties.h,
-        html: React.renderToString(containerComponent)
-      };
-    });
-
-};
+React.render(<Bonjour name="Le Vim" />, element);
